@@ -1,0 +1,42 @@
+时间：2019年11月20日 
+
+地点：公司 
+
+正文：
+
+1、Functions：函数。固定格式：
+def 函数名（参数1，参数2...）：
+    执行语句
+
+2、Function parameters：函数的参数。
+parameter指函数定义中的参数；argument指函数调用时的参数。
+
+3、Local variables:局部变量，仅作用于函数内部。
+
+4、Global variables：全局变量，可以作用于整个代码中。一般会用“global”进行表明。
+
+5、Default argument values：默认参数值。注意的点：
+（1）默认参数值必须是常数；
+（2）默认参数值必须是不可变的；
+（3）只有最后一个参数值才能作为默认参数值。
+
+6、Keyword arguments：关键字参数。看下面这个例子：
+def func(a, b = 5, c = 10):
+    print('a is', a, 'and b is', b, 'and c is', c)
+
+func(3, 7)               # 按照次序赋值，其中a=3，b=7，c=10
+func(25, c = 24)         # 按照次序+关键字赋值，其中a=25，b=5，c=24
+func(c = 50, a = 100)    # 按照关键字赋值，其中a=100，b=5，c=50
+
+7、VarArgs parameters：可变参数。看下面这个例子：
+def total(a = 5, *numbers, **phonebook):
+    print('a', a)
+其中【*numbers】有一个星号，数据结构是元祖；【**phonebook】有两个星号，数据结构是字典。
+
+8、Return statement：返回return。
+
+9、DocStrings：文档字符串，用于更好的解释说明代码的含义。注意的格式包括：
+（1）必须紧挨着写在函数的def下面行；
+（2）必须以三引号开始和结尾；
+（3）第一行必须以大写字母开始，第二行必须是空白，第三行及以后进行更为细节的解释。
+（4）文档字符串有它自己的函数，即【函数名._doc_】
