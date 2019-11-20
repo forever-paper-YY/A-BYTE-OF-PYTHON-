@@ -1,0 +1,20 @@
+时间：2019年11月20日 
+
+地点：公司 
+
+正文：
+
+python只有3种控制语句，包括1个判断语句（if...elif...else）和2个循环语句（for循环和while循环）。
+
+1、If statement：if语句。
+
+2、While statement：while循环。
+
+3、For loop：for循环。
+
+4、Break statement：break语句。
+
+5、Continue statement：continue语句。
+相同点：break和continue都可以用于循环中，遵循就近原则；不可单独使用。
+差异：（1）break用于结束整个循环。
+     （2）continue用于结束本次循环，并进入下一次循环中。
