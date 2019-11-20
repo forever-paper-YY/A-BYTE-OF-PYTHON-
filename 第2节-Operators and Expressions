@@ -4,20 +4,15 @@
 
 正文：
 
-1、
+1、Operators：运算符。
 
+2、Shortcut for math operation and assignment：运算与赋值的简写。
+如：a = a * 3 可以简写为：a *= 3 
 
+3、Evaluation order：计算顺序。
 
+4、Changing the order of evaluation：改变计算顺序，可以通过使用小括号（parentheses）改变。
 
+5、Associativity：关联性。
 
-
-
-
-
-
-
-
-
-
-
-
+6、Expressions：表达式。
