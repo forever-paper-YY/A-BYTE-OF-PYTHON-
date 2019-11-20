@@ -1,0 +1,20 @@
+时间：2019年11月20日 
+
+地点：公司 
+
+正文：
+
+1、Modules：模块。
+
+2、Byte-compiled .pyc files：以.pyc结尾的中间码文件，能够帮助你在跨平台使用模块时，拥有更快的运行速度。
+
+3、From...import statement：fromp import和import的区别见LP3THW的习题40。
+
+4、A module's _name_：模块的名字。具体解释见71页。
+
+5、Making your own modules：自己写个模块。
+
+6、Dir function：内置的dir函数。具体解释见73页。
+
+7、Packages：包。具体解释见74页。
+
