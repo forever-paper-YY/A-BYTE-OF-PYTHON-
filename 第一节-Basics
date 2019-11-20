@@ -4,4 +4,48 @@
 
 正文：
 
-1、
+1、Comments：注释
+
+2、Literal Constants：字面常数
+
+3、Numbers：数字，包括integers（整数）和floats（浮点数）。
+
+4、Strings：字符串。
+
+5、Single Quote：单引号。
+   Double Quote：双引号。
+   Triple Quote：三引号。可用于多行注释、多行字符串的引用。
+
+6、Strings are immutable：字符串是不可变的。
+
+7、The format method：格式化。当字符串内部包含变量引用时，需要进行格式化。有两种写法：
+age = 20
+name = 'Swaroop'
+print(f"{name} is {age} years old.")                 # python3目前的主流写法是这种
+print("{} is {} years old.".format(name, age))       # 这是第二种写法
+
+8、Escape Sequences：转义序列，即反斜杠\。
+（1）\n表示分隔行；\t表示段首缩进；
+（2）一个单独的反斜杠\放在末尾，作用与【end=''】相同，都是连接不同的行。
+print("This is the first sentence.\
+      This is the second sentence.")
+输出的结果是：This is the first sentence.This is the second sentence.
+
+9、Raw string：原始字符串，简写为“r”或“R”，只对其内部的反斜杠起作用，取消反斜杠的转义功能，使其仅作为一个符号。
+
+10、Variable：变量。常见格式是【变量 = 参数】，其中参数是我们输入的，交给变量，由变量进入到代码内部执行。
+
+11、Identifier naming：标识符的命名。规则如下：
+（1）必须以字母（大小写皆可）或下划线开头。
+（2）之后可以是字母、下划线或数字。
+（3）标识符的名字是严格区分大小写的。
+
+12、Data types：数据类型。
+
+13、Object：对象。python是一个“面向对象编程”的语言，核心就是对“类”和“对象”的使用。
+
+14、Logical and Physical line
+（1）Logical line：逻辑线，给python看的。
+（2）Physical line：物理线，给用户看的。
+
+15、Identation：段首缩进，通常是用四个空格。
