@@ -1,0 +1,93 @@
+时间：2019年11月22日 
+
+地点：公司 
+
+正文：
+
+Object Oriented Programming，简写为OOP，即“面向对象编程”。核心是对“类”（class)和“对象”（object）的使用。
+
+1、The self：self参数的使用。一般的函数（function）与类中的方法（method）唯一的不同点在于：
+类中的方法必须将“self”作为括号内的第一个参数；但在实际调用类中的方法时，却并不需要为该“self”参数赋值，python会自动识别对象。举例理解：
+
+class MyClass(object):
+     pass
+     
+     def method(self, arg1, arg2):
+        pass
+
+myobject = MyClass()
+myobject.method(arg1, arg2)
+
+最后一行在运用对象调用类中的方法。此时python会自动将该代码理解为：
+MyClass.method(myobject, arg1, arg2)
+
+2、Class：类。
+
+3、Methods：类中的方法。
+
+4、The __init__ method：初始化函数。
+（1）__init__是python的特殊变量，注意前后都加了双下划线。
+只在前面加一个下划线：表明这是类中的方法，可以外部引用，但不建议外部引用。
+只在前面加两个下划线：表明这是类中的方法，禁止外部引用，实际也无法引用。
+在前后都加两个下划线：python中的特殊变量，如初始化函数__init__等。
+（2）在定义了类后，一般就会进行初始化，从而将类的属性绑定给归属于类的对象。
+
+5、Class and Object Variables：类变量和对象变量。
+
+class Robot:                                              # 定义类Robot
+    """Represents a robot, with a name."""             
+    
+    # A class variable, counting the number of robots  
+    population = 0                                        # population是个类变量，下文也同样。
+    
+    def __init__(self, name):                             # 进行初始化，赋予属性name。
+        """Initializes the data."""
+        self.name = name
+        print("(Initializing{})".format(self.name))    
+        
+        # When this person is created, the robot
+        # adds to the population
+        Robot.population += 1                          
+    
+    def die(self):                                         # 类中的方法die
+        """I am dying."""
+        print("{} is being destroyed!".format(self.name))
+        
+        Robot.population -= 1
+        
+        if Robot.population == 0:
+            print("{} was the last one.".format(self.name))
+        else:
+            print("There are still {:d} robots working.".format(Robot.population))
+    
+    def say_hi(self):                                       # 类中的方法say_hi
+        """Greeting by the robot.
+        
+        Yeah, they can do that."""
+        print("Greetings, my masters call me {}.".format(self.name))
+        
+    @ classmethod
+    def how_many(cls):                                      # 类中的方法how_many，为什么这里的参数不是self，而是cls？？？？？？
+        """Prints the current population."""
+        print("We have {:d} robots.".format(cls.population))
+
+droid1 = Robot("R2-D2")
+droid1.say_hi()                                             # 执行类中的方法say_hi
+Robot.how_many()                                            # 执行类中的方法how_many，为什么这里是用“类”来执行？？？？？？
+
+droid2 = Robot("C-3PO")
+droid2.say_hi()
+Robot.how_many()
+
+print("\nRobots can do some work here.\n")
+
+print("Robots have finished their work. So let's destroy them.")
+droid1.die()
+droid2.die()
+Robot.how_many()
+
+6、Inheritance：
+
+        
+       
+   
