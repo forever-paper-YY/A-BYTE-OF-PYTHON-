@@ -4,4 +4,40 @@
 
 正文：
 
-1、
+1、Imput from user：用户的输入。
+
+2、File：文件。
+
+poem = '''\                              
+Programming is fun
+When the work is done
+if you wanna make your work also fun:
+    use python!
+'''
+
+# Open fro 'w'riting
+f = open('poem.txt', 'w')                # 写入模式打开一个文件（注意此时是通过open函数创建了一个新文件）
+# write text to file
+f.write(poem)                            # write函数
+# close the file
+f.close()                                # close函数
+
+# If no mode is specified,
+# 'r'ead mode is assumed by default
+f = open('poem.txt')                     # 当未出现参数时，默认是以只读模式打开一个文件。
+while True:                              # while true是无限循环。直到碰到false才退出。
+    line = f.readline()                  # readline函数
+    # Zero length indicates EOF
+    if len(line) == 0:
+        break                            # while循环中的break函数，退出整个循环。
+    # The 'line' already has a newline
+    # at the end of each line
+    # since it is reading from a file.
+    print(line, end = '')
+# close the file
+f.close()                                # close函数
+
+3、Pickle：pickle模块。
+
+4、Unicode：统一码。见《LP3THW》的习题23。
+
