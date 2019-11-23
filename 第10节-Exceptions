@@ -4,14 +4,58 @@
 
 正文：
 
-1、Errors：
+1、Errors：错误。
 
-2、Exceptions：
+2、Exceptions：异常。
 
-3、Handling Exceptions：
+3、Handling Exceptions：处理异常。引入try...except...else语句。详见123页。
 
-4、Raising Exceptions：
+4、Raising Exceptions：raise函数，详见120页。
+
+class ShortInputEexcption(Exception):              # 定义一个自建异常，需要基于标准异常
+    '''A user-defined exception class.'''
+    def __init__(self, length, atleast):
+        Exception.__init__(self)
+        self.length = length
+        self.atleast = atleast
+
+try:
+    text = input('Enter somthing --> ')
+    if len(text) < 3:
+        raise ShortInputEexcption(len(text), 3)     # raise函数常与if判断结合，放在try下。
+        # Other work can contribute as usual here.
+except EOFError:
+    print('Why did you do an EOF on me?')
+except ShortInputEexcption as ex:                   # except中需要有一个相同的异常
+    print(('ShortInputEexcption: The input was {} long, expected at least {}').format(ex.length, ex.atleast))
+else:
+    print('No exception was raised.')
 
 5、Try...Finally：
 
-6、The with satament：with语句。
+import sys
+import time
+
+f = None
+try:
+    f = open("poem.txt")
+    # Our usual file-reading idiom
+    while True:
+        line = f.readline()
+        if len(line) == 0:
+            break
+        print(line, end = '')
+        sys.stdout.flush()
+        print("Press ctrl + c now")
+        # To make sure it runs for a while
+        time.sleep(2)
+except IOError:
+    print("Could not find file poem.txt")
+except KeyboardInterrupt:
+    print("!! You cancelled the reading from the file.")
+finally:
+    if f:
+        f.close()
+    print("(Cleaning up: Closed the file)")
+
+6、The with satament：with语句。详见打印页。
